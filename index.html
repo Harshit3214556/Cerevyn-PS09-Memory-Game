@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta name="description" content="A small memory game that adapts its next round to your performance.">
+  <title>Flip Eight — Memory Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Flip Eight home"><span class="brand-mark">F</span> flip eight</a>
+      <span class="course-label">CEREVYN · PS09</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">A little focus goes a long way</p>
+      <h1 id="page-title">Make the <span>matches.</span></h1>
+      <p class="intro-copy">Turn over two cards at a time. Find every pair, then see how your next round changes.</p>
+    </section>
+
+    <section class="game-layout" aria-label="Memory game">
+      <div class="board-panel">
+        <div class="board-heading">
+          <div><span class="eyebrow">CURRENT ROUND</span><h2 id="round-label">Round 1 <span class="difficulty-pill" id="difficulty-label">Easy</span></h2></div>
+          <button class="button button-quiet" id="restart-button" type="button">↻ Restart</button>
+        </div>
+        <div id="game-board" class="game-board" role="group" aria-label="Memory cards"></div>
+        <p class="board-hint" id="game-message" role="status" aria-live="polite">Pick any card to get started.</p>
+      </div>
+
+      <aside class="side-panel">
+        <div class="stats-card">
+          <p class="eyebrow">YOUR ROUND</p>
+          <div class="stat-row"><span>Moves</span><strong id="moves-value">0</strong></div>
+          <div class="stat-row"><span>Pairs found</span><strong id="pairs-value">0 <small>/ 8</small></strong></div>
+          <div class="stat-row"><span>Time</span><strong id="time-value">00:00</strong></div>
+          <div class="progress-track" aria-label="Pairs found progress"><div id="progress-bar" class="progress-fill"></div></div>
+          <p class="progress-caption" id="progress-caption">Eight pairs to find</p>
+        </div>
+        <div class="adapt-card">
+          <div class="adapt-icon" aria-hidden="true">↗</div>
+          <p class="eyebrow">NEXT ROUND</p>
+          <h3 id="next-difficulty-title">Easy again</h3>
+          <p id="adapt-reason">Finish a round to get a difficulty recommendation based on your result.</p>
+        </div>
+        <div class="history-card">
+          <div class="history-heading"><p class="eyebrow">RECENT ROUNDS</p><button id="clear-history-button" class="text-button" type="button">Clear</button></div>
+          <div id="history-list" class="history-list"><p class="empty-history">Your completed rounds will appear here.</p></div>
+        </div>
+      </aside>
+    </section>
+    <footer><span>Built for practice, not pressure.</span><span>Flip Eight <span aria-hidden="true">✳</span></span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

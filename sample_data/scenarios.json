@@ -1,0 +1,14 @@
+{
+  "problem_id": "PS09",
+  "project": "Flip Eight",
+  "scenarios": [
+    { "id": "S01", "name": "Fresh board", "setup": "Open the game", "expected": "Sixteen cards, eight pairs, zero moves and zero matched pairs." },
+    { "id": "S02", "name": "Matching pair", "setup": "Reveal both cards with the same pair ID", "expected": "Both cards remain matched and pair progress increases by one." },
+    { "id": "S03", "name": "Mismatch", "setup": "Reveal cards with different pair IDs", "expected": "The cards turn back over after a short delay." },
+    { "id": "S04", "name": "Rapid selection", "setup": "Try to select a third card while a mismatch is resolving", "expected": "The third selection is ignored until the first two cards reset." },
+    { "id": "S05", "name": "Restart during pending mismatch", "setup": "Reveal a mismatch and immediately restart", "expected": "The previous timeout is cancelled and cannot alter the new round." },
+    { "id": "S06", "name": "High performance adaptation", "setup": "Evaluate a result with 12 moves and 45 seconds", "expected": "Next difficulty is Hard." },
+    { "id": "S07", "name": "Practice adaptation", "setup": "Evaluate a result with 22 moves", "expected": "Next difficulty is Easy." },
+    { "id": "S08", "name": "History clearing", "setup": "Complete a round and press Clear", "expected": "The local round history is removed." }
+  ]
+}

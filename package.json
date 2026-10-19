@@ -1,0 +1,12 @@
+{
+  "name": "cerevyn-ps09-flip-eight",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Adaptive memory matching game for the Cerevyn Chitkara PS09 assessment",
+  "scripts": {
+    "test": "node --test",
+    "serve": "python -m http.server 8000"
+  },
+  "engines": { "node": ">=20" }
+}
